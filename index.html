@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gleb Andreev</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="assets/favicon.svg" rel="icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/beercss@3.12.11/dist/cdn/beer.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/beercss@3.12.11/dist/cdn/beer.min.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav class="nav-rail m l left max">
+      <header>
+        <h4 class="small nav-header"><a>Profile</a></h4>
+        <a id="download-cv" class="button extend square round no-margin">
+          <i>download</i>
+          <span>Download CV</span>
+        </a>
+      </header>
+      <a class="nav-rail-link" href="#summary">
+        <i>account_circle</i>
+        <span>Summary</span>
+      </a>
+      <a class="nav-rail-link" href="#skills">
+        <i>code</i>
+        <span>Skills</span>
+      </a>
+      <a class="nav-rail-link" href="#experience">
+        <i>business_center</i>
+        <span>Experience</span>
+      </a>
+      <a class="nav-rail-link" href="#education">
+        <i class="material-symbols-rounded">school</i>
+        <span>Education</span>
+      </a>
+      <div class="max"></div>
+      <button id="change-theme" class="border circle">
+        <i id="change-theme-icon" class="page bottom active"></i>
+      </button>
+    </nav>
+    <main class="medium-padding">
+      <div id="summary">
+        <div class="grid">
+          <div class="s12 l9">
+            <div class="page bottom active">
+              <article class="no-elevate round large-padding">
+                <div class="large-padding">
+                  <h1 class="small">Gleb Andreev</h1>
+                  <p class="small">
+                    Frontend Software Engineer with 4 years of experience
+                    delivering scalable web applications. Expertise in
+                    JavaScript, TypeScript, and React, consistently shipping
+                    high-quality features on schedule. Developed innovative
+                    applications that enhance user experience while
+                    collaborating effectively with cross-functional teams.
+                    Continuously adopting modern best practices to drive product
+                    success.
+                  </p>
+                  <nav>
+                    <a
+                      class="button extra"
+                      href="mailto:gleb.andreevv12@gmail.com"
+                      ><i>forward_to_inbox</i> <span>Send Email</span></a
+                    >
+                    <a
+                      class="button extra border"
+                      href="https://linkedin.com/in/gleb-andreev"
+                      target="_blank"
+                      ><i>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <title>linkedin</title>
+                          <path
+                            d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"
+                          />
+                        </svg>
+                      </i>
+                      <span>Let's contact!</span>
+                    </a>
+                  </nav>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="l3">
+            <div class="page right active">
+              <article class="no-elevate round no-padding">
+                <img class="responsive" src="assets/andreev.jpg" alt="photo" />
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="large-space"></div>
+      </div>
+      <section id="skills" class="responsive no-margin">
+        <h2>Skills</h2>
+        <div class="medium-space"></div>
+        <div class="skills-section">
+          <button class="chip fill round large">JavaScript</button>
+          <button class="chip fill round large">TypeScript</button>
+          <button class="chip fill round large">SQL</button>
+          <button class="chip fill round large">HTML</button>
+          <button class="chip fill round large">CSS</button>
+          <button class="chip fill round large">Vite</button>
+          <button class="chip fill round large">React</button>
+          <button class="chip fill round large">Redux Toolkit</button>
+          <button class="chip fill round large">JWT</button>
+          <button class="chip fill round large">NodeJS</button>
+          <button class="chip fill round large">Next.js</button>
+          <button class="chip fill round large">Angular</button>
+          <button class="chip fill round large">Vue</button>
+        </div>
+        <div class="large-space"></div>
+      </section>
+      <section id="experience" class="responsive no-margin">
+        <h2>Work experience</h2>
+        <div class="small-space"></div>
+        <article class="no-elevate no-padding round">
+          <div class="large-padding">
+            <h6>Unified system for multi-channel customer interaction</h6>
+            <div class="position-details">
+              <span class="chip fill round no-margin"
+                >Frontend Software Engineer</span
+              >
+              <span class="chip fill round no-margin">React</span>
+            </div>
+
+            <ul class="bullet-points">
+              <li>
+                Defined the architecture of web application for employees,
+                establishing the scalable structure using React, Redux Toolkit,
+                and Next.js, integrating chat and workflow modules to support
+                business operations.
+              </li>
+              <li>
+                Engineered interactive quiz and photo-task builders that
+                enhanced work transparency and boosted operational efficiency.
+              </li>
+              <li>
+                Developed a corporate chat system using SignalR, streamlining
+                issue resolution and reducing response times.
+              </li>
+            </ul>
+            <div class="position-details">
+              <span class="chip round no-margin">
+                <i>domain</i>
+                <span>IBA Group</span>
+              </span>
+              <span class="chip round no-margin">
+                <i>calendar_month</i>
+                <span>Jun 2024 — Present</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="no-elevate no-padding round">
+          <div class="large-padding">
+            <h6>GIS platform for visualization and analysis of big data</h6>
+            <div class="position-details">
+              <span class="chip fill round no-margin"
+                >Frontend Software Engineer</span
+              >
+              <span class="chip fill round no-margin">React</span>
+            </div>
+
+            <ul class="bullet-points">
+              <li>
+                Crafted user-friendly frontend screens for creating and managing
+                custom map layers using React and Prime React, closely aligning
+                with stakeholder requirements.
+              </li>
+              <li>
+                Built a WKT serializer and deserializer to enable precise
+                handling of geographic data and enhance the platform's data
+                processing capabilities.
+              </li>
+            </ul>
+            <div class="position-details">
+              <span class="chip round no-margin">
+                <i>domain</i>
+                <span>IBA Group</span>
+              </span>
+              <span class="chip round no-margin">
+                <i>calendar_month</i>
+                <span>Sep 2023 — Jun 2024</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="no-elevate no-padding round">
+          <div class="large-padding">
+            <h6>Expert cloud system</h6>
+            <div class="position-details">
+              <span class="chip fill round no-margin"
+                >Frontend Software Engineer</span
+              >
+              <span class="chip fill round no-margin">Vue</span>
+            </div>
+
+            <ul class="bullet-points">
+              <li>
+                Engineered asynchronous processing and pagination for large text
+                files, ensuring a seamless user experience when handling
+                extensive datasets.
+              </li>
+              <li>
+                Designed and implemented intuitive, responsive front-end
+                interfaces using Vue 2, Vuex, Sass, and Bootstrap, which
+                resulted in improved user engagement.
+              </li>
+            </ul>
+            <div class="position-details">
+              <span class="chip round no-margin">
+                <i>domain</i>
+                <span>IBA Group</span>
+              </span>
+              <span class="chip round no-margin">
+                <i>calendar_month</i>
+                <span>Sep 2022 — Sep 2023</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="no-elevate no-padding round">
+          <div class="large-padding">
+            <h6>Management system for insurances and benefits for employers</h6>
+            <div class="position-details">
+              <span class="chip fill round no-margin"
+                >Frontend Software Engineer</span
+              >
+              <span class="chip fill round no-margin">Angular</span>
+            </div>
+
+            <ul class="bullet-points">
+              <li>
+                Migrated the application from AngularJS to Angular 12, boosting
+                performance by over 12% and enhancing maintainability and
+                scalability.
+              </li>
+              <li>
+                Refactored components, views, and services using NgRx to
+                streamline maintenance and reduce update times by more than 20%.
+              </li>
+            </ul>
+            <div class="position-details">
+              <span class="chip round no-margin">
+                <i>domain</i>
+                <span>IBA Group</span>
+              </span>
+              <span class="chip round no-margin">
+                <i>calendar_month</i>
+                <span>Sep 2021 — Sep 2022</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="no-elevate no-padding round">
+          <div class="large-padding">
+            <h6>Online freight exchange platform</h6>
+            <div class="position-details">
+              <span class="chip fill round no-margin"
+                >Frontend Software Engineer</span
+              >
+              <span class="chip fill round no-margin">React</span>
+            </div>
+
+            <ul class="bullet-points">
+              <li>
+                Developed backend logic for publishing industry and cargo
+                transportation news using NodeJS, PostgreSQL, and AWS S3,
+                thereby increasing user engagement.
+              </li>
+              <li>
+                Engineered an intuitive front-end application with Webpack,
+                React, Redux, and Antd that improved user adoption rates.
+              </li>
+              <li>
+                Containerized the React application with Docker and Nginx,
+                reducing deployment time by over 20% and enhancing scalability.
+              </li>
+            </ul>
+            <div class="position-details">
+              <span class="chip round no-margin">
+                <i>domain</i>
+                <span>IBA Group</span>
+              </span>
+              <span class="chip round no-margin">
+                <i>calendar_month</i>
+                <span>Jul 2021 — Sep 2021</span>
+              </span>
+            </div>
+          </div>
+        </article>
+        <div class="large-space"></div>
+      </section>
+
+      <section id="education" class="responsive no-margin">
+        <h2>Education</h2>
+        <div class="small-space"></div>
+        <article class="no-elevate no-padding round">
+          <div class="large-padding">
+            <h6>
+              Belarusian State University of Informatics and Radioelectronics
+            </h6>
+            <p class="italic">Bachelor's degree</p>
+            <div class="position-details">
+              <span class="chip round no-margin">
+                <i>location_on</i>
+                <span>Minsk</span>
+              </span>
+              <span class="chip round no-margin">
+                <i>calendar_month</i>
+                <span>Sep 2018 — Jun 2022</span>
+              </span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
