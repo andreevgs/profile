@@ -96,6 +96,13 @@ function handleChangeFAB() {
   const currentTime = Date.now();
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const isBouncing = scrollTop < 0 || scrollTop > maxScroll;
+
+  if (isBouncing) {
+    return;
+  }
+
   if (Math.abs(scrollTop - lastScrollTop) < minScrollDistance) {
     lastScrollTop = scrollTop;
     return;
