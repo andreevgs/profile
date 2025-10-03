@@ -10,6 +10,13 @@ section {
   text-align: left;
   padding: 0.9rem 0;
 }
+.summary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+}
 .nav-rail {
   align-items: stretch !important;
 }
@@ -33,4 +40,38 @@ section {
   flex-direction: row;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+#download-cv-fab {
+  display: none;
+  position: fixed;
+  right: 1rem;
+  bottom: 5.5rem;
+}
+
+#download-cv-fab:not(.active):hover {
+  --_padding: 0;
+  padding: 0;
+  inline-size: var(--_size);
+}
+
+#download-cv-fab:not(.active):hover::after {
+  background-size: inherit;
+  opacity: 1;
+}
+
+#download-cv-fab:not(.active):hover > span {
+  display: none;
+}
+
+#download-cv-fab.active {
+  border-radius: 1rem !important;
+}
+
+@media (max-width: 993px) {
+  #photo {
+    display: none;
+  }
+  #download-cv-fab {
+    display: inline-flex;
+  }
 }
