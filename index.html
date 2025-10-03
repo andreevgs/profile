@@ -21,7 +21,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <nav class="nav-rail m l left max">
+    <nav class="nav-rail l left max">
       <header>
         <h4 class="small nav-header"><a>Profile</a></h4>
         <a id="download-cv" class="button extend square round no-margin">
@@ -42,13 +42,31 @@
         <span>Experience</span>
       </a>
       <a class="nav-rail-link" href="#education">
-        <i class="material-symbols-rounded">school</i>
+        <i>school</i>
         <span>Education</span>
       </a>
       <div class="max"></div>
       <button id="change-theme" class="border circle">
         <i id="change-theme-icon" class="page bottom active"></i>
       </button>
+    </nav>
+    <nav class="nav-bar s m bottom">
+      <a class="nav-bar-link" href="#summary">
+        <i>account_circle</i>
+        <span>Summary</span>
+      </a>
+      <a class="nav-bar-link" href="#skills">
+        <i>code</i>
+        <span>Skills</span>
+      </a>
+      <a class="nav-bar-link" href="#experience">
+        <i>business_center</i>
+        <span>Experience</span>
+      </a>
+      <a class="nav-bar-link" href="#education">
+        <i>school</i>
+        <span>Education</span>
+      </a>
     </nav>
     <main class="medium-padding">
       <div id="summary">
@@ -68,14 +86,14 @@
                     Continuously adopting modern best practices to drive product
                     success.
                   </p>
-                  <nav>
+                  <div class="summary-actions">
                     <a
-                      class="button extra"
+                      class="button extra no-margin"
                       href="mailto:gleb.andreevv12@gmail.com"
                       ><i>forward_to_inbox</i> <span>Send Email</span></a
                     >
                     <a
-                      class="button extra border"
+                      class="button extra border no-margin"
                       href="https://linkedin.com/in/gleb-andreev"
                       target="_blank"
                       ><i>
@@ -91,12 +109,12 @@
                       </i>
                       <span>Let's contact!</span>
                     </a>
-                  </nav>
+                  </div>
                 </div>
               </article>
             </div>
           </div>
-          <div class="l3">
+          <div id="photo" class="l3">
             <div class="page right active">
               <article class="no-elevate round no-padding">
                 <img class="responsive" src="assets/andreev.jpg" alt="photo" />
@@ -334,6 +352,13 @@
           </div>
         </article>
       </section>
+      <a
+        id="download-cv-fab"
+        class="button extend square round medium-elevate no-margin active"
+      >
+        <i>download</i>
+        <span>Download CV</span>
+      </a>
     </main>
   </body>
 </html>

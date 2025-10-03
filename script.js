@@ -1,10 +1,18 @@
 const downloadButton = document.querySelector("#download-cv");
+const downloadFAB = document.querySelector("#download-cv-fab");
 const changeThemeButton = document.querySelector("#change-theme");
 const changeThemeIcon = document.querySelector("#change-theme-icon");
 const sections = document.querySelectorAll("section, #summary");
-const navLinks = document.querySelectorAll(".nav-rail-link");
+const navRailLinks = document.querySelectorAll(".nav-rail-link");
+const navBarLinks = document.querySelectorAll(".nav-bar-link");
 
-downloadButton.addEventListener("click", function (e) {
+const scrollSpeedThreshold = 20;
+const minScrollDistance = 10;
+
+let lastScrollTop = 0;
+let lastScrollTime = Date.now();
+
+function downloadCV(e) {
   e.preventDefault();
 
   const fileUrl = "assets/andreev.pdf";
@@ -29,14 +37,15 @@ downloadButton.addEventListener("click", function (e) {
 
       window.URL.revokeObjectURL(url);
     })
-    .catch((error) => {
+    .catch(() => {
       alert("Failed to download file");
     });
-});
+}
 
 function setActiveSection() {
   let currentSection = "";
   const scrollPosition = window.scrollY + 100;
+  const links = [...navRailLinks, ...navBarLinks];
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
@@ -50,16 +59,22 @@ function setActiveSection() {
     }
   });
 
-  navLinks.forEach((link) => {
+  links.forEach((link) => {
     link.classList.remove("active");
   });
 
   if (currentSection) {
-    const activeLink = document.querySelector(
+    const activeRailLink = document.querySelector(
       `.nav-rail a[href="#${currentSection}"]`
     );
-    if (activeLink) {
-      activeLink.classList.add("active");
+    const activeBarLink = document.querySelector(
+      `.nav-bar a[href="#${currentSection}"]`
+    );
+    if (activeRailLink) {
+      activeRailLink.classList.add("active");
+    }
+    if (activeBarLink) {
+      activeBarLink.classList.add("active");
     }
   }
 }
@@ -77,10 +92,38 @@ function changeTheme() {
   setChangeThemeIcon();
 }
 
+function handleChangeFAB() {
+  const currentTime = Date.now();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (Math.abs(scrollTop - lastScrollTop) < minScrollDistance) {
+    lastScrollTop = scrollTop;
+    return;
+  }
+  const timeDiff = currentTime - lastScrollTime;
+  const scrollDiff = Math.abs(scrollTop - lastScrollTop);
+  const scrollSpeed = timeDiff > 0 ? (scrollDiff / timeDiff) * 1000 : 0;
+
+  if (scrollSpeed <= scrollSpeedThreshold) {
+    return;
+  }
+
+  const scrollingDown = scrollTop > lastScrollTop;
+
+  if (scrollingDown) {
+    downloadFAB.classList.remove("active");
+  } else if (!scrollingDown) {
+    downloadFAB.classList.add("active");
+  }
+  lastScrollTop = scrollTop;
+  lastScrollTime = currentTime;
+}
+
 window.addEventListener("scroll", setActiveSection);
+window.addEventListener("scroll", handleChangeFAB, { passive: true });
+downloadButton.addEventListener("click", downloadCV);
+downloadFAB.addEventListener("click", downloadCV);
 changeThemeButton.addEventListener("click", changeTheme);
 
 setActiveSection();
 setChangeThemeIcon();
-
-console.log(ui("mode"));
