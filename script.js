@@ -6,7 +6,7 @@ const sections = document.querySelectorAll("section, #summary");
 const navRailLinks = document.querySelectorAll(".nav-rail-link");
 const navBarLinks = document.querySelectorAll(".nav-bar-link");
 
-const scrollSpeedThreshold = 10;
+const scrollSpeedThreshold = 15;
 const minScrollDistance = 0;
 
 let lastScrollTop = 0;
