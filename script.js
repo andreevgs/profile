@@ -44,18 +44,32 @@ function downloadCV(e) {
 
 function setActiveSection() {
   let currentSection = "";
-  const scrollPosition = window.scrollY + 100;
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
   const links = [...navRailLinks, ...navBarLinks];
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
+  const lastSectionMinVisible = 200;
 
-    if (
-      scrollPosition >= sectionTop &&
-      scrollPosition < sectionTop + sectionHeight
-    ) {
-      currentSection = section.id;
+  sections.forEach((section, index) => {
+    if (index === sections.length - 1) {
+      const sectionRect = section.getBoundingClientRect();
+
+      const visibleHeight =
+        Math.min(sectionRect.bottom, windowHeight) -
+        Math.max(sectionRect.top, 0);
+      if (visibleHeight >= lastSectionMinVisible) {
+        currentSection = section.id;
+      }
+    } else {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (
+        scrollPosition >= sectionTop - 100 &&
+        scrollPosition < sectionTop + sectionHeight - 100
+      ) {
+        currentSection = section.id;
+      }
     }
   });
 
