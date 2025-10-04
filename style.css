@@ -4,11 +4,15 @@ html {
 
 section {
   padding-top: 1rem;
+  margin-block-start: 0 !important;
 }
 
 .nav-header {
   text-align: left;
   padding: 0.9rem 0;
+}
+.summary-info {
+  padding: 1.5rem;
 }
 .summary-actions {
   display: flex;
@@ -38,6 +42,7 @@ section {
 .position-details {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
 }
@@ -73,5 +78,14 @@ section {
   }
   #download-cv-fab {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 431px) {
+  h1 {
+    font-size: 2.8125rem !important;
+  }
+  .summary-info {
+    padding: 0;
   }
 }
