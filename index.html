@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Gleb Andreev</title>
@@ -127,20 +127,58 @@
       <section id="skills" class="responsive">
         <h2>Skills</h2>
         <div class="medium-space"></div>
-        <div class="skills-section">
-          <button class="chip fill round large">JavaScript</button>
+        <div class="skills-segmented">
+          <nav class="group connected">
+            <button class="left-round large active" data-target="frontend">
+              <i>format_image_left</i>
+              <span>Frontend</span>
+            </button>
+            <button class="no-round large" data-target="ui-styling">
+              <i>brush</i>
+              <span>UI & Styling</span>
+            </button>
+            <button class="no-round large" data-target="state-data">
+              <i>database</i>
+              <span>State & Data</span>
+            </button>
+            <button class="right-round large" data-target="engineering">
+              <i>handyman</i>
+              <span>Engineering & Ops</span>
+            </button>
+          </nav>
+        </div>
+        <div class="small-space"></div>
+        <div id="frontend" class="skills-content page active">
           <button class="chip fill round large">TypeScript</button>
-          <button class="chip fill round large">SQL</button>
-          <button class="chip fill round large">HTML</button>
-          <button class="chip fill round large">CSS</button>
-          <button class="chip fill round large">Vite</button>
+          <button class="chip fill round large">JavaScript</button>
           <button class="chip fill round large">React</button>
-          <button class="chip fill round large">Redux Toolkit</button>
-          <button class="chip fill round large">JWT</button>
-          <button class="chip fill round large">NodeJS</button>
           <button class="chip fill round large">Next.js</button>
           <button class="chip fill round large">Angular</button>
           <button class="chip fill round large">Vue</button>
+          <button class="chip fill round large">HTML</button>
+          <button class="chip fill round large">CSS</button>
+        </div>
+        <div id="ui-styling" class="skills-content page">
+          <button class="chip fill round large">CSS Modules</button>
+          <button class="chip fill round large">Saas</button>
+          <button class="chip fill round large">Prime React</button>
+          <button class="chip fill round large">Vuetify</button>
+          <button class="chip fill round large">Material UI</button>
+          <button class="chip fill round large">Ant Design</button>
+        </div>
+        <div id="state-data" class="skills-content page">
+          <button class="chip fill round large">Redux Toolkit</button>
+          <button class="chip fill round large">TanStack Query</button>
+          <button class="chip fill round large">Pinia</button>
+          <button class="chip fill round large">NgRx</button>
+          <button class="chip fill round large">SignalR</button>
+          <button class="chip fill round large">REST APIs</button>
+        </div>
+
+        <div id="engineering" class="skills-content page">
+          <button class="chip fill round large">Node.js</button>
+          <button class="chip fill round large">Vite</button>
+          <button class="chip fill round large">Azure DevOps</button>
         </div>
         <div class="large-space"></div>
       </section>
@@ -356,7 +394,15 @@
         <hr />
       </section>
       <footer class="no-padding responsive">
-        <div class="s12"><p>&copy; 2025. All rights reserved.</p></div>
+        <div class="s12">
+          <p>
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            . All rights reserved.
+          </p>
+        </div>
       </footer>
       <a
         id="download-cv-fab"
