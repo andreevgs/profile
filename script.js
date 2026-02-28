@@ -5,6 +5,10 @@ const changeThemeIcon = document.querySelector("#change-theme-icon");
 const sections = document.querySelectorAll("section, #summary");
 const navRailLinks = document.querySelectorAll(".nav-rail-link");
 const navBarLinks = document.querySelectorAll(".nav-bar-link");
+const skillSegmentedButtons = document.querySelectorAll(
+  ".skills-segmented > nav > button",
+);
+const skillSections = document.querySelectorAll(".skills-content");
 
 const scrollSpeedThreshold = 12;
 const minScrollDistance = 0;
@@ -24,7 +28,7 @@ function downloadCV(e) {
     })
     .then((blob) => {
       const url = window.URL.createObjectURL(
-        new Blob([blob], { type: "application/pdf" })
+        new Blob([blob], { type: "application/pdf" }),
       );
       const link = document.createElement("a");
       link.href = url;
@@ -79,10 +83,10 @@ function setActiveSection() {
 
   if (currentSection) {
     const activeRailLink = document.querySelector(
-      `.nav-rail a[href="#${currentSection}"]`
+      `.nav-rail a[href="#${currentSection}"]`,
     );
     const activeBarLink = document.querySelector(
-      `.nav-bar a[href="#${currentSection}"]`
+      `.nav-bar a[href="#${currentSection}"]`,
     );
     if (activeRailLink) {
       activeRailLink.classList.add("active");
@@ -145,6 +149,23 @@ window.addEventListener("scroll", handleChangeFAB, { passive: true });
 downloadButton.addEventListener("click", downloadCV);
 downloadFAB.addEventListener("click", downloadCV);
 changeThemeButton.addEventListener("click", changeTheme);
+
+skillSegmentedButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("data-target");
+
+    skillSegmentedButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    skillSections.forEach((section) => {
+      if (section.id === targetId) {
+        section.classList.add("active");
+      } else {
+        section.classList.remove("active");
+      }
+    });
+  });
+});
 
 setActiveSection();
 setChangeThemeIcon();

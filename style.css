@@ -27,13 +27,22 @@ section {
 .nav-rail-link {
   justify-content: flex-start;
 }
-.skills-section {
-  display: flex;
+.skills-segmented {
+  overflow-x: scroll;
+}
+.skills-segmented > nav > button {
+  flex: 1;
+}
+.skills-content {
+  display: flex !important;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
-.skills-section > button {
+.skills-content:not(.active) {
+  visibility: hidden;
+}
+.skills-content > button {
   margin: 0;
 }
 .bullet-points {
@@ -78,6 +87,12 @@ section {
   }
   #download-cv-fab {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 812px) {
+  .skills-segmented > nav > button > span {
+    display: none;
   }
 }
 
