@@ -19,8 +19,8 @@ let lastScrollTime = Date.now();
 function downloadCV(e) {
   e.preventDefault();
 
-  const fileUrl = "assets/andreev.pdf";
-  const fileName = "andreev.pdf";
+  const fileUrl = "assets/GLEB_ANDREEV_CV.pdf";
+  const fileName = "GLEB_ANDREEV_CV.pdf";
 
   fetch(fileUrl)
     .then((response) => {
